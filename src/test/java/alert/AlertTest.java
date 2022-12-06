@@ -1,0 +1,40 @@
+package alert;
+
+import base.BaseTEst;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+public class AlertTest extends BaseTEst {
+    @Test
+    public void testAcceptAlert(){
+        var accptAlret = homePage.clickponAlert();
+        accptAlret.trigeerAlret();
+        assertTrue( accptAlret.alretGetText().contains("I am a JS Alert"));
+        accptAlret.acceptAlert();
+        assertEquals(accptAlret.findResult(),"You successfully clicked an alert","there wrong output") ;
+
+    }
+    @Test
+    public void testGetTextFormat(){
+        var alert = homePage.clickponAlert();
+        alert.confirmAlret();
+     String message = alert.alretGetText();
+     alert.cancelAlert();
+     assertEquals(message,"I am a JS Confirm","there wrong mesage ");
+    }
+    @Test
+    public void testPrometALret(){
+        var alert = homePage.clickponAlert();
+        alert.prometAlret();
+        //assertEquals(alert.alretGetText(),"I am a JS prompt","there wrong mesage ");
+        String text = "ahmed";
+        alert.alretSendMessage(text);
+        alert.acceptAlert();
+        assertEquals(alert.findResult(),"You entered: ahmed","there wrong mesage ");
+
+    }
+
+
+}
