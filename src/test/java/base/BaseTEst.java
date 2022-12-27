@@ -1,7 +1,10 @@
 package base;
 
 import com.google.common.io.Files;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -18,6 +21,7 @@ import utills.WindowManger;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTEst {
     // to use add web-driver to start the browsers
@@ -44,7 +48,7 @@ public class BaseTEst {
 
         driver.register(new EventReporter());        // to lunch the browser
         // to make  it wait for 30 second to fail if not find the element  and throw not find element expection
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         gohome();
         //driver.manage().window().fullscreen();
         /*
