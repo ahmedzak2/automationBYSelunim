@@ -1,0 +1,24 @@
+<suite name="collectionofTests"  parallel="methods" verbose="7">
+    <test name="regression1">
+        <classes>
+            <!-- You can add more than one class  to do regression -->
+            <class name ="alert.AlertTest">
+            </class>
+            <class name="alert.FileUploadTEst"/>
+            <class name="hover.HoverTests"/>
+            <class name="javascript.JavaScriptTest"/>
+            <class name="Keys.KeysTest"/>
+            <class name="login.LOGIN"/>
+
+            <class name="dropDown.DropDownTest">
+                <methods>
+                    <!--  to choose what will show in regression -->
+                    <include name ="testAcceptAlert"/>
+                    <include name="testGetTextFormat"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
+

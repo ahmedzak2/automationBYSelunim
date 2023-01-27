@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [collectionofTests]" verbose="7">
+  <test thread-count="5" parallel="methods" name="regression1(failed)" verbose="7">
+    <classes>
+      <class name="alert.AlertTest">
+        <methods>
+          <include name="clossSreen"/>
+          <include name="testPrometALret"/>
+          <include name="testAcceptAlert"/>
+          <include name="setUp"/>
+          <include name="testGetTextFormat"/>
+        </methods>
+      </class> <!-- alert.AlertTest -->
+      <class name="Keys.KeysTest">
+        <methods>
+          <include name="testPi"/>
+          <include name="testkeys"/>
+          <include name="clossSreen"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Keys.KeysTest -->
+      <class name="javascript.JavaScriptTest">
+        <methods>
+          <include name="testAddMultipleAttributeToDropdown"/>
+          <include name="testJava"/>
+          <include name="testScrollToFifthParagraph"/>
+          <include name="clossSreen"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- javascript.JavaScriptTest -->
+    </classes>
+  </test> <!-- regression1(failed) -->
+</suite> <!-- Failed suite [collectionofTests] -->
